@@ -8,25 +8,48 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script defer>
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
 </head>
 <body>
     <header>
-        <div class="logo">Al Maknoon Group</div>
+        <div class="logo">
+            <img src="logo.jpg" alt="Al Maknoon Group Logo">
+            Al Maknoon Group
+        </div>
         <nav>
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#companies">Our Companies</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" onclick="showSection('home')">Home</a></li>
+                <li><a href="#" onclick="showSection('about')">About</a></li>
+                <li><a href="#" onclick="showSection('companies')">Our Companies</a></li>
+                <li><a href="#" onclick="showSection('services')">Services</a></li>
+                <li><a href="#" onclick="showSection('contact')">Contact</a></li>
             </ul>
         </nav>
     </header>
     
-    <section class="hero">
-        <h1>Welcome to Al Maknoon Group</h1>
-        <p>Seven industries, one vision of excellence.</p>
+    <section class="section active" id="home">
+        <video autoplay muted loop class="background-video">
+            <source src="videos/dubai.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <h1>Welcome to Al Maknoon Group</h1>
+            <p>Seven industries, one vision of excellence.</p>
+        </div>
     </section>
     
-    <section id="companies" class="companies">
+    <section class="section" id="about">
+        <h2>About Us</h2>
+        <p>Al Maknoon Group is a leading conglomerate with a diverse portfolio in industries such as gold refining, automotive services, logistics, and technology.</p>
+    </section>
+    
+    <section class="section" id="companies">
         <h2>Our Companies</h2>
         <div class="company-grid">
             <div class="company-card"> <h3>Car Repair</h3> <p>Expert automotive services.</p> </div>
@@ -36,6 +59,37 @@
             <div class="company-card"> <h3>Tech Solutions</h3> <p>Innovating digital landscapes.</p> </div>
             <div class="company-card"> <h3>Retail & Trade</h3> <p>Connecting markets worldwide.</p> </div>
             <div class="company-card"> <h3>Energy</h3> <p>Powering progress sustainably.</p> </div>
+        </div>
+    </section>
+    
+    <section class="section" id="services">
+        <h2>Our Services</h2>
+        <div class="service-grid">
+            <div class="service-card"> <h3>Web Design & Development</h3> <p>High-quality websites tailored to your business.</p> </div>
+            <div class="service-card"> <h3>Network Management</h3> <p>Seamless and secure IT solutions.</p> </div>
+            <div class="service-card"> <h3>Gold Refining & Trading</h3> <p>Excellence in precious metals.</p> </div>
+            <div class="service-card"> <h3>Business Consulting</h3> <p>Helping businesses scale effectively.</p> </div>
+        </div>
+    </section>
+    
+    <section class="section" id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-container">
+            <div class="contact-form">
+                <h3>Get in Touch</h3>
+                <input type="text" placeholder="Your Name">
+                <input type="email" placeholder="Your Email">
+                <input type="text" placeholder="Your Phone">
+                <textarea placeholder="Your Message"></textarea>
+                <button>Send Message</button>
+            </div>
+            <div class="contact-info">
+                <h3>Our Office</h3>
+                <p>Office No. 02, 11th Floor, MM Towers, Al Maktoum Ave, Deira, Dubai, UAE</p>
+                <p>Phone: +971 4 352 3334</p>
+                <p>Email: info@almaknoongroups.ae</p>
+                <iframe class="map" src="https://www.google.com/maps/embed?..." allowfullscreen></iframe>
+            </div>
         </div>
     </section>
     
